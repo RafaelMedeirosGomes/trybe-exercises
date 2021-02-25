@@ -10,4 +10,5 @@ for (let index = 0; index < numbers.length; index++){
 }
 console.log(sum);
 //Exercise 3
-console.log(sum/numbers.length);
+let average = sum/numbers.length;
+console.log(average);
