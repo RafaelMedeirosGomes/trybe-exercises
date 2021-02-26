@@ -34,8 +34,27 @@ for (let index = 0; index < numbers.length; index += 1) {
     oddNumberCounter += 1;
   }
 }
-if(oddNumberCounter !== 0){
-  console.log(oddNumberCounter)
-}else{
+if (oddNumberCounter !== 0) {
+  console.log(oddNumberCounter);
+} else {
   console.log("nenhum valor ímpar encontrado");
+}
+//Exercise 7
+const biggestValuePossible = Number.MAX_VALUE;
+let smallestNumber = biggestValuePossible;
+for (let index = 0; index < numbers.length; index += 1) {
+  if (numbers[index] < smallestNumber) {
+    smallestNumber = numbers[index];
+  }
+}
+console.log(smallestNumber);
+//Exercise 8
+let naturalNumbersArray = [];
+for (let index = 1; index <= 25; index += 1) {
+  naturalNumbersArray.push(index);
+}
+console.log(naturalNumbersArray);
+//Exercise 9
+for (let index = 0; index < naturalNumbersArray.length; index += 1) {
+  console.log(naturalNumbersArray[index] / 2);
 }
