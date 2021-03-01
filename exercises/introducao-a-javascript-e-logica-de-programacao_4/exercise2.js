@@ -82,12 +82,24 @@ function dictContem(entry, dict) {
 console.log(maisSeRepete([2, 3, 2, 5, 8, 2, 3]));
 //EX 6
 function somatorio(n) {
-    let sum = 0;
-    for(let index = 1; index <= n; index += 1){
-      sum += index;
-    }
-    return sum;
+  let sum = 0;
+  for (let index = 1; index <= n; index += 1) {
+    sum += index;
   }
+  return sum;
 }
 console.log(somatorio(5));
-
+//EX 7
+function verificaFimPalavra(word, ending) {
+  let skip = word.length - ending.length;
+  let index2 = 0;
+  for (let index = skip; index < word.length; index += 1) {
+    if (word[index] != ending[index2]) {
+      return false;
+    }
+    index2 += 1;
+  }
+  return true;
+}
+console.log(verificaFimPalavra("trybe", "be"));
+console.log(verificaFimPalavra("joaofernando", "fernan"));
