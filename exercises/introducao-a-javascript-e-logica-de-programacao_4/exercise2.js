@@ -50,3 +50,31 @@ function maiorNaArray(array) {
 }
 console.log(maiorNaArray(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
 //EX 5
+function maisSeRepete(array){
+  let dictNumeros = [];
+  for(let pick in array){
+    if(dictContem(array[pick], dictNumeros) != -1){
+      dictNumeros[dictContem(array[pick], dictNumeros)] += 1;
+    }else{
+      dictNumeros[array[pick]] = 1;
+    }
+  }
+  let most = 0;
+  let index = -1;
+  for(let key in dictNumeros){
+    if(dictNumeros[key] > most){
+      most = dictNumeros[key];
+      index = key;
+    }
+  }
+  return index;
+}
+function dictContem(entry, dict){
+  for(let key in dict){
+    if(key === entry){
+      return key;
+    }
+  }
+  return -1;
+}
+console.log(maisSeRepete([2, 3, 2, 5, 8, 2, 3]));
