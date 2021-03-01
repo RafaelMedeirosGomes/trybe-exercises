@@ -23,3 +23,16 @@ function maiorNaArray(array) {
   return index;
 }
 console.log(maiorNaArray([2, 3, 6, 7, 10, 1]));
+//EX 3
+function maiorNaArray(array) {
+  let biggest = Number.MAX_VALUE;
+  let index = -1;
+  for(let key in array){
+    if(array[key] < biggest){
+      biggest = array[key];
+      index = key;
+    }
+  }
+  return index;
+}
+console.log(maiorNaArray([2, 4, 6, 7, 10, 0, -3]));
