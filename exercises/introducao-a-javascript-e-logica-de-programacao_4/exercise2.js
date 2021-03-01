@@ -24,7 +24,7 @@ function maiorNaArray(array) {
 }
 console.log(maiorNaArray([2, 3, 6, 7, 10, 1]));
 //EX 3
-function maiorNaArray(array) {
+function menorNaArray(array) {
   let biggest = Number.MAX_VALUE;
   let index = -1;
   for(let key in array){
@@ -35,4 +35,18 @@ function maiorNaArray(array) {
   }
   return index;
 }
-console.log(maiorNaArray([2, 4, 6, 7, 10, 0, -3]));
+console.log(menorNaArray([2, 4, 6, 7, 10, 0, -3]));
+//EX 4
+function maiorNaArray(array) {
+  let biggest = -1 * Number.MAX_VALUE;
+  let index = -1;
+  for(let key in array){
+    if(array[key].length > biggest){
+      biggest = array[key].length;
+      index = key;
+    }
+  }
+  return array[index];
+}
+console.log(maiorNaArray(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
+//EX 5
