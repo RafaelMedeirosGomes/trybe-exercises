@@ -48,8 +48,8 @@
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
        function exercise1(){
-        let paragraphsToChange = document.getElementsByTagName("p")[1];
-        paragraphsToChange.innerHTML = 'Me vejo mais careca daqui a dois anos';
+        let paragraphToChange = document.getElementsByTagName("p")[1];
+        paragraphToChange.innerHTML = 'Me vejo mais careca daqui a dois anos';
        }
        exercise1();
        function exercise2(){
@@ -68,6 +68,11 @@
         title.innerHTML = 'Exercício 5.1 - JavaScript';
        }
        exercise4();
+       function exercise5(){
+        let paragraphToChange = document.getElementsByTagName("p")[2];
+        paragraphToChange.innerText = paragraphToChange.innerHTML.toUpperCase();
+       }
+       exercise5();
 
 
 
