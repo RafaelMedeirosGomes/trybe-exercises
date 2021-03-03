@@ -50,12 +50,17 @@
  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
+       function exercise1(){
         let paragraphsToModify = document.getElementsByTagName("P");
         for(let index = 0; index < paragraphsToModify.length; index += 1) {
           if(paragraphsToModify[index].innerHTML === "-----"){
             paragraphsToModify[index].innerHTML = 'Me vejo mais careca daqui a dois anos';
           }
         }
+       }
+       exercise1();
+
+
     </script>
   </body>
 </html>
