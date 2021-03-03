@@ -51,31 +51,41 @@
         let paragraphToChange = document.getElementsByTagName("p")[1];
         paragraphToChange.innerHTML = 'Me vejo mais careca daqui a dois anos';
        }
-       exercise1();
+
        function exercise2(){
         let square = document.getElementsByClassName('main-content')[0];
         // Thank you https://stackoverflow.com/questions/14323082/why-doesnt-backgroundcolor-rgba-b-c-work/14323127 for the explanation
         square.style.backgroundColor = 'rgb(76, 164, 109)';
        }
-       exercise2();
+
        function exercise3(){
          let square = document.getElementsByClassName('center-content')[0];
          square.style.backgroundColor = 'white';
        }
-       exercise3();
+
        function exercise4(){
         let title = document.getElementsByTagName('h1')[0];
         title.innerHTML = 'Exercício 5.1 - JavaScript';
        }
-       exercise4();
+
        function exercise5(){
-        let paragraphToChange = document.getElementsByTagName("p")[2];
+        let paragraphToChange = document.getElementsByTagName('p')[2];
         paragraphToChange.innerText = paragraphToChange.innerHTML.toUpperCase();
        }
+
+       function exercise6(){
+         let paragraphsToChange = document.getElementsByTagName('p');
+         for(let index = 0; index < paragraphsToChange.length; index += 1){
+           console.log(paragraphsToChange[index].innerHTML);
+         }
+       }
+
+       exercise1();
+       exercise2();
+       exercise3();
+       exercise4();
        exercise5();
-
-
-
+       exercise6();
     </script>
   </body>
 </html>
