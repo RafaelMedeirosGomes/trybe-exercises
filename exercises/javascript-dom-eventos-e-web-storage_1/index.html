@@ -44,32 +44,34 @@
         - document.getElementById()
         - document.getElementsByClassName()
         - document.getElementsByTagName()
- Crie uma função que mude a cor do quadrado vermelho para branco.
- Crie uma função que corrija o texto da tag <h1>.
  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
        function exercise1(){
-        let paragraphsToModify = document.getElementsByTagName("P");
-        for(let index = 0; index < paragraphsToModify.length; index += 1) {
-          if(paragraphsToModify[index].innerHTML === "-----"){
-            paragraphsToModify[index].innerHTML = 'Me vejo mais careca daqui a dois anos';
+        let paragraphsToCheck = document.getElementsByTagName("p");
+        for(let index = 0; index < paragraphsToCheck.length; index += 1) {
+          if(paragraphsToCheck[index].innerHTML === "-----"){
+            paragraphsToCheck[index].innerHTML = 'Me vejo mais careca daqui a dois anos';
           }
         }
        }
        exercise1();
        function exercise2(){
-        let square = document.getElementsByClassName("main-content")[0];
+        let square = document.getElementsByClassName('main-content')[0];
         // Thank you https://stackoverflow.com/questions/14323082/why-doesnt-backgroundcolor-rgba-b-c-work/14323127 for the explanation
         square.style.backgroundColor = 'rgb(76, 164, 109)';
        }
        exercise2();
        function exercise3(){
-         let square = document.getElementsByClassName("center-content")[0];
-         console.log(square.style.backgroundColor);
+         let square = document.getElementsByClassName('center-content')[0];
          square.style.backgroundColor = 'white';
        }
        exercise3();
+       function exercise4(){
+        let title = document.getElementsByTagName('h1')[0];
+        title.innerHTML = 'Exercício 5.1 - JavaScript';
+       }
+       exercise4();
 
 
     </script>
