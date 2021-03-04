@@ -94,6 +94,12 @@
         ulElement.appendChild(liElement);
       }
       document.querySelector(".right-content").appendChild(ulElement);
+      // 9. Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+      for (let count = 1; count <= 3; count += 1) {
+        let h3Element = document.createElement("h3");
+        h3Element.innerText = "Testing " + count + "...";
+        document.querySelector(".main-content").appendChild(h3Element);
+      }
     </script>
   </body>
 </html>
