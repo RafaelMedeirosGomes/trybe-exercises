@@ -73,6 +73,14 @@
       let pElement = document.createElement("p");
       pElement.innerText = "Algum texto :D";
       document.querySelector(".center-content").appendChild(pElement);
+      // 5. Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      let divElement3 = document.createElement("div");
+      divElement3.className = "left-content";
+      document.querySelector(".main-content").appendChild(divElement3);
+      // 6. Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+      let divElement4 = document.createElement("div");
+      divElement4.className = "right-content";
+      document.querySelector(".main-content").appendChild(divElement4);
     </script>
   </body>
 </html>
