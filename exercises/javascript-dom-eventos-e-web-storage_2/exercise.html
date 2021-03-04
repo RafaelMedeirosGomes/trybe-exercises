@@ -81,6 +81,19 @@
       let divElement4 = document.createElement("div");
       divElement4.className = "right-content";
       document.querySelector(".main-content").appendChild(divElement4);
+      // 7. Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
+      let imgElement = document.createElement("img");
+      imgElement.src = "https://picsum.photos/200";
+      imgElement.className = "small-image";
+      document.querySelector(".left-content").appendChild(imgElement);
+      // 8. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+      let ulElement = document.createElement("ul");
+      for (let count = 1; count <= 10; count += 1) {
+        let liElement = document.createElement("li");
+        liElement.innerText = count;
+        ulElement.appendChild(liElement);
+      }
+      document.querySelector(".right-content").appendChild(ulElement);
     </script>
   </body>
 </html>
