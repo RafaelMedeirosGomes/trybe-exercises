@@ -64,11 +64,12 @@ for (let day of dezDaysList) {
   dayElement.className = "day";
   dayElement.innerText = day;
   if (day === 24 || day === 25 || day === 31) {
-    //dayElement.className += " holiday";
+    dayElement.className += " holiday";
   }
   if (day === 4 || day === 11 || day === 18 || day === 25) {
-    //dayElement.className += " friday"
+    dayElement.className += " friday"
   }
   daysElement.appendChild(dayElement);
 }
+// Exercício 2
 
