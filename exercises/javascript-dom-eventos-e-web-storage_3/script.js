@@ -76,13 +76,11 @@ function createDaysOfTheMonth() {
 createDaysOfTheMonth();
 // Exercício 2
 function createButtonHolidays(string) {
-  let btnElement = document.createElement("button");
-  btnElement.name = string;
+  const btnElement = document.createElement("button");
+  btnElement.innerText = string;
   btnElement.id = "btn-holiday";
-  let btnsContainerElement = document.querySelector(".buttons-container");
-  btnsContainerElement.appendChild(btnElement);
-  // The line below is part of Exercese 3 - it uses delegates like described here https://stackoverflow.com/questions/29586046/delegating-a-function-call-in-javascript to pass the caller context to the function addEvent, so it can attach the listener in the correct object, have in mind this is *probably not* what the exercise asked for
-  addEventListenerOnClickChangeHolidaysColor.call(btnElement);
+  const btnsContainer = document.querySelector(".buttons-container");  
+  btnsContainer.appendChild(btnElement);
 }
 createButtonHolidays("Feriados");
 // Exercício 3
