@@ -78,7 +78,7 @@ function createButton(string) {
   btnElement.id = "btn-holiday";
   let btnsContainerElement = document.querySelector(".buttons-container");
   btnsContainerElement.appendChild(btnElement);
-  // part of exercise 3 - The line below uses delegates like described here https://stackoverflow.com/questions/29586046/delegating-a-function-call-in-javascript to pass the caller context for the function addEvent, so it can attach the listener in the correct object, have in mind this is *probably not* what the exercise asked for
+  // The line below is part of Exercese 3 - it uses delegates like described here https://stackoverflow.com/questions/29586046/delegating-a-function-call-in-javascript to pass the caller context to the function addEvent, so it can attach the listener in the correct object, have in mind this is *probably not* what the exercise asked for
   addEventListenerOnClick.call(btnElement);
 }
 createButton("Feriados");
