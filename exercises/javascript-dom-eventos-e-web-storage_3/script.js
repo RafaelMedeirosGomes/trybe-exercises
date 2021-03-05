@@ -64,6 +64,7 @@ function createDaysOfTheMonth() {
     let dayListItem = document.createElement("li");
     dayListItem.className = "day";
     dayListItem.innerText = day;
+    dayListItem.originalText = day;
     if (day === 24 || day === 25 || day === 31) {
       dayListItem.className += " holiday";
     }
@@ -96,16 +97,13 @@ function changeHolidays(event) {
     }
   }
 }
-
-// Exercício 4
-function createButtonFridays(string) {
-  let btnElement = document.createElement("button");
-  btnElement.name = string;
-  btnElement.id = "btn-friday";
-  let btnsContainerElement = document.querySelector(".buttons-container");
-  btnsContainerElement.appendChild(btnElement);
-  // Line below is from exercise 5
-  addEventListenerOnClickChangeFridaysColor.call(btnElement);
+// Exercise 4
+function createButtonFridays (string) {
+  const buttonFriday = document.createElement("button");
+  buttonFriday.innerText = string;
+  buttonFriday.id = "btn-friday";
+  const btnsContainer = document.querySelector(".buttons-container");
+  btnsContainer.appendChild(buttonFriday);
 }
 createButtonFridays("Sexta-feira");
 // Exercício 5
