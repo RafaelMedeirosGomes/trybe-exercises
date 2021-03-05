@@ -98,29 +98,24 @@ function changeHolidays(event) {
   }
 }
 // Exercise 4
-function createButtonFridays (string) {
+function createButtonFridays(string) {
   const buttonFriday = document.createElement("button");
   buttonFriday.innerText = string;
   buttonFriday.id = "btn-friday";
   const btnsContainer = document.querySelector(".buttons-container");
   btnsContainer.appendChild(buttonFriday);
+  //Exercise 5
+  buttonFriday.addEventListener("click", changeFridays);
 }
 createButtonFridays("Sexta-feira");
-// Exercício 5
-function addEventListenerOnClickChangeFridaysColor() {
-  this.addEventListener("click", changeFridays);
-}
+
 function changeFridays() {
-  let ul = document.querySelector("#days");
-  let days = ul.children;
-  for (let index in days) {
-    if (days[index].className.includes("friday")) {
-      if (days[index].innerText === "SEXTOU!") {
-        // Disgusting hack that only works given this exactly same dezDaysList
-        days[index].innerText = index - 1;
-      } else {
-        days[index].innerText = "SEXTOU!";
-      }
+  const fridaysList = document.querySelectorAll(".friday");
+  for (let day of fridaysList){
+    if (day.innerText === "SEXTOU!" ){
+      day.innerText = day.originalText;
+    }else{
+      day.innerText = "SEXTOU!";
     }
   }
 }
