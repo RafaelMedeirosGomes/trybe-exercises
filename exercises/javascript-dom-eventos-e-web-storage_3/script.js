@@ -72,7 +72,7 @@ for (let day of dezDaysList) {
   daysElement.appendChild(dayElement);
 }
 // Exercício 2
-function createButton(string) {
+function createButtonHolidays(string) {
   let btnElement = document.createElement("button");
   btnElement.name = string;
   btnElement.id = "btn-holiday";
@@ -81,7 +81,7 @@ function createButton(string) {
   // The line below is part of Exercese 3 - it uses delegates like described here https://stackoverflow.com/questions/29586046/delegating-a-function-call-in-javascript to pass the caller context to the function addEvent, so it can attach the listener in the correct object, have in mind this is *probably not* what the exercise asked for
   addEventListenerOnClick.call(btnElement);
 }
-createButton("Feriados");
+createButtonHolidays("Feriados");
 // Exercício 3
 function addEventListenerOnClick() {
   this.addEventListener("click", changeHolydaysColor);
@@ -96,3 +96,12 @@ function changeHolydaysColor() {
     }
   }
 }
+// Exercício 4
+function createButtonFridays(string){
+  let btnElement = document.createElement("button");
+  btnElement.name = string;
+  btnElement.id = "btn-friday";
+  let btnsContainerElement = document.querySelector(".buttons-container");
+  btnsContainerElement.appendChild(btnElement);
+}
+createButtonFridays("Sexta-feira");
