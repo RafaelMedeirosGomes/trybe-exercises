@@ -67,9 +67,16 @@ for (let day of dezDaysList) {
     dayElement.className += " holiday";
   }
   if (day === 4 || day === 11 || day === 18 || day === 25) {
-    dayElement.className += " friday"
+    dayElement.className += " friday";
   }
   daysElement.appendChild(dayElement);
 }
 // Exercício 2
-
+function createButton(string) {
+  let btnElement = document.createElement("button");
+  btnElement.name = string;
+  btnElement.id = "btn-holiday";
+  let btnsContainerElement = document.querySelector(".buttons-container");
+  btnsContainerElement.appendChild(btnElement);
+}
+createButton("Feriados");
