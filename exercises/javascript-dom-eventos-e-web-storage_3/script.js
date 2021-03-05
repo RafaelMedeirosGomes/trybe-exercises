@@ -79,14 +79,14 @@ function createButtonHolidays(string) {
   let btnsContainerElement = document.querySelector(".buttons-container");
   btnsContainerElement.appendChild(btnElement);
   // The line below is part of Exercese 3 - it uses delegates like described here https://stackoverflow.com/questions/29586046/delegating-a-function-call-in-javascript to pass the caller context to the function addEvent, so it can attach the listener in the correct object, have in mind this is *probably not* what the exercise asked for
-  addEventListenerOnClick.call(btnElement);
+  addEventListenerOnClickChangeHolidaysColor.call(btnElement);
 }
 createButtonHolidays("Feriados");
 // Exercício 3
-function addEventListenerOnClick() {
-  this.addEventListener("click", changeHolydaysColor);
+function addEventListenerOnClickChangeHolidaysColor() {
+  this.addEventListener("click", changeHolidays);
 }
-function changeHolydaysColor() {
+function changeHolidays() {
   let holidays = document.querySelectorAll(".holiday");
   for (let day of holidays) {
     if (day.style.backgroundColor === "green") {
@@ -97,11 +97,32 @@ function changeHolydaysColor() {
   }
 }
 // Exercício 4
-function createButtonFridays(string){
+function createButtonFridays(string) {
   let btnElement = document.createElement("button");
   btnElement.name = string;
   btnElement.id = "btn-friday";
   let btnsContainerElement = document.querySelector(".buttons-container");
   btnsContainerElement.appendChild(btnElement);
+  // Line below is from exercise 5
+  addEventListenerOnClickChangeFridaysColor.call(btnElement);
 }
 createButtonFridays("Sexta-feira");
+// Exercício 5
+function addEventListenerOnClickChangeFridaysColor() {
+  this.addEventListener("click", changeFridays);
+}
+function changeFridays() {
+  let ul = document.querySelector("#days");
+  let days = ul.children;
+  for (let index in days) {
+    if(days[index].className.includes("friday")){
+      if (days[index].innerText === "SEXTOU!") {
+        // Disgusting hack that only works given this exactly same dezDaysList
+        days[index].innerText = index - 1;
+      } else {
+        days[index].innerText = "SEXTOU!";
+      }
+    }
+
+  }
+}
