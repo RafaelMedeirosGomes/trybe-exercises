@@ -111,12 +111,25 @@ createButtonFridays("Sexta-feira");
 
 function changeFridays() {
   const fridaysList = document.querySelectorAll(".friday");
-  for (let day of fridaysList){
-    if (day.innerText === "SEXTOU!" ){
+  for (let day of fridaysList) {
+    if (day.innerText === "SEXTOU!") {
       day.innerText = day.originalText;
-    }else{
+    } else {
       day.innerText = "SEXTOU!";
     }
   }
 }
 // Exercício 6
+function addEventListenersToDays() {
+  const monthDaysList = document.querySelector("#days");
+  monthDaysList.addEventListener("mouseover", bigTextSize);
+  monthDaysList.addEventListener("mouseout", normalTextSize);
+}
+addEventListenersToDays();
+
+function bigTextSize(evt) {
+  evt.target.style.fontSize = "30px";
+}
+function normalTextSize(evt) {
+  evt.target.style.fontSize = "20px";
+}
