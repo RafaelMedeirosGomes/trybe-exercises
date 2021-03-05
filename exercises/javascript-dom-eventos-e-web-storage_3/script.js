@@ -74,29 +74,29 @@ function createDaysOfTheMonth() {
   }
 }
 createDaysOfTheMonth();
-// Exercício 2
+// Exercise 2
 function createButtonHolidays(string) {
-  const btnElement = document.createElement("button");
-  btnElement.innerText = string;
-  btnElement.id = "btn-holiday";
-  const btnsContainer = document.querySelector(".buttons-container");  
-  btnsContainer.appendChild(btnElement);
+  const buttonHoliday = document.createElement("button");
+  buttonHoliday.innerText = string;
+  buttonHoliday.id = "btn-holiday";
+  const btnsContainer = document.querySelector(".buttons-container");
+  btnsContainer.appendChild(buttonHoliday);
+  //Exercise 3
+  buttonHoliday.addEventListener("click", changeHolidays);
 }
 createButtonHolidays("Feriados");
-// Exercício 3
-function addEventListenerOnClickChangeHolidaysColor() {
-  this.addEventListener("click", changeHolidays);
-}
-function changeHolidays() {
-  let holidays = document.querySelectorAll(".holiday");
-  for (let day of holidays) {
+
+function changeHolidays(event) {
+  const holidaysList = document.querySelectorAll(".holiday");
+  for (let day of holidaysList) {
     if (day.style.backgroundColor === "green") {
-      day.style.backgroundColor = "";
+      day.style.backgroundColor = "rgb(238,238,238)";
     } else {
       day.style.backgroundColor = "green";
     }
   }
 }
+
 // Exercício 4
 function createButtonFridays(string) {
   let btnElement = document.createElement("button");
