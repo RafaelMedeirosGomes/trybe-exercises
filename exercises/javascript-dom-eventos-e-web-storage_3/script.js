@@ -22,55 +22,58 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
-// Exercício 1
-const daysElement = document.querySelector("#days");
-const dezDaysList = [
-  29,
-  30,
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12,
-  13,
-  14,
-  15,
-  16,
-  17,
-  18,
-  19,
-  20,
-  21,
-  22,
-  23,
-  24,
-  25,
-  26,
-  27,
-  28,
-  29,
-  30,
-  31,
-];
-for (let day of dezDaysList) {
-  let dayElement = document.createElement("li");
-  dayElement.className = "day";
-  dayElement.innerText = day;
-  if (day === 24 || day === 25 || day === 31) {
-    dayElement.className += " holiday";
+// Exercise 1
+function createDaysOfTheMonth() {
+  const dezDaysList = [
+    29,
+    30,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+  ];
+  const monthDaysList = document.querySelector("#days");
+  for (let day of dezDaysList) {
+    let dayListItem = document.createElement("li");
+    dayListItem.className = "day";
+    dayListItem.innerText = day;
+    if (day === 24 || day === 25 || day === 31) {
+      dayListItem.className += " holiday";
+    }
+    if (day === 4 || day === 11 || day === 18 || day === 25) {
+      dayListItem.className += " friday";
+    }
+    monthDaysList.appendChild(dayListItem);
   }
-  if (day === 4 || day === 11 || day === 18 || day === 25) {
-    dayElement.className += " friday";
-  }
-  daysElement.appendChild(dayElement);
 }
+createDaysOfTheMonth();
 // Exercício 2
 function createButtonHolidays(string) {
   let btnElement = document.createElement("button");
@@ -115,7 +118,7 @@ function changeFridays() {
   let ul = document.querySelector("#days");
   let days = ul.children;
   for (let index in days) {
-    if(days[index].className.includes("friday")){
+    if (days[index].className.includes("friday")) {
       if (days[index].innerText === "SEXTOU!") {
         // Disgusting hack that only works given this exactly same dezDaysList
         days[index].innerText = index - 1;
@@ -123,6 +126,6 @@ function changeFridays() {
         days[index].innerText = "SEXTOU!";
       }
     }
-
   }
 }
+// Exercício 6
