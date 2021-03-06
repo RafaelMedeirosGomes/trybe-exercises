@@ -119,7 +119,7 @@ function changeFridays() {
     }
   }
 }
-// Exercício 6
+// Exercise 6
 function addEventListenersToDays() {
   const monthDaysList = document.querySelector("#days");
   monthDaysList.addEventListener("mouseover", bigTextSize);
@@ -133,3 +133,11 @@ function bigTextSize(evt) {
 function normalTextSize(evt) {
   evt.target.style.fontSize = "20px";
 }
+// Exercise 7
+function addTask(string) {
+  let task = document.createElement("span");
+  task.innerText = string;
+  const taskList = document.querySelector(".my-tasks");
+  taskList.appendChild(task);
+}
+
