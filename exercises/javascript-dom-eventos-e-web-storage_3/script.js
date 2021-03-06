@@ -125,7 +125,24 @@ function addEventListenersToDays() {
   const monthDaysList = document.querySelector("#days");
   monthDaysList.addEventListener("mouseover", bigTextSize);
   monthDaysList.addEventListener("mouseout", normalTextSize);
+  // Exercise 10 starts here
+  monthDaysList.addEventListener("click", changeColor);
 }
+function changeColor(event) {
+  if (document.getElementsByClassName("task selected").length === 0) {
+    return; //There is nothing to do here
+  }
+  const bgColor = document.getElementsByClassName("task selected")[0].style
+    .backgroundColor;
+  let div = event.target;
+  // This is not working - it enter inside the loop but doesn't change the color probably same problem we had in 9
+  if (div.style.backgroundColor === bgColor) {
+    div.style.backgroundColor = "";
+  } else {
+    div.style.backgroundColor = bgColor;
+  }
+}
+// Exercise 10 ends here
 addEventListenersToDays();
 // Reference for Event.target used below https://developer.mozilla.org/en-US/docs/Web/API/Event/target
 function bigTextSize(event) {
@@ -158,10 +175,10 @@ function taskSelected(event) {
   if (div.classList.contains("task")) {
     if (div.classList.contains("selected")) {
       div.classList.remove("selected");
-      event.target.style.borderWidth = "";
+      div.style.borderWidth = "";
     } else {
       div.classList.add("selected");
-      event.target.style.borderWidth = "thick";
+      div.style.borderWidth = "thick";
     }
     event.stopPropagation();
   }
