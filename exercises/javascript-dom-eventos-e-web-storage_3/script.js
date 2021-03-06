@@ -22,6 +22,7 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
+// Coded using the help of https://www.w3schools.com/ documentation
 // Exercise 1
 function createDaysOfTheMonth() {
   const dezDaysList = [
@@ -126,12 +127,12 @@ function addEventListenersToDays() {
   monthDaysList.addEventListener("mouseout", normalTextSize);
 }
 addEventListenersToDays();
-
-function bigTextSize(evt) {
-  evt.target.style.fontSize = "30px";
+// Reference for Event.target used below https://developer.mozilla.org/en-US/docs/Web/API/Event/target
+function bigTextSize(event) {
+  event.target.style.fontSize = "30px";
 }
-function normalTextSize(evt) {
-  evt.target.style.fontSize = "20px";
+function normalTextSize(event) {
+  event.target.style.fontSize = "20px";
 }
 // Exercise 7
 function addTask(string) {
@@ -140,11 +141,33 @@ function addTask(string) {
   const taskList = document.querySelector(".my-tasks");
   taskList.appendChild(task);
 }
+addTask("Estudar");
 // Exerise 8
-function addColor(string){
+function addColor(string) {
   let color = document.createElement("div");
   color.className = "task";
   color.style.backgroundColor = string;
   const taskList = document.querySelector(".my-tasks");
   taskList.appendChild(color);
+  color.addEventListener("click", taskSelected);
 }
+addColor("blue");
+// Exercise 9
+function taskSelected(event) {
+  let div = event.target;
+  if (div.classList.contains("task")) {
+    if (div.classList.contains("selected")) {
+      div.classList.remove("selected");
+      event.target.style.borderWidth = "";
+    } else {
+      div.classList.add("selected");
+      event.target.style.borderWidth = "thick";
+    }
+    event.stopPropagation();
+  }
+}
+function addEventListenerToTaskList() {
+  const taskList = document.getElementsByClassName("my-tasks")[0];
+  taskList.addEventListener("click", taskSelected);
+}
+addEventListenerToTaskList();
