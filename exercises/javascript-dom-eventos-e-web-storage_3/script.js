@@ -140,4 +140,11 @@ function addTask(string) {
   const taskList = document.querySelector(".my-tasks");
   taskList.appendChild(task);
 }
-
+// Exerise 8
+function addColor(string){
+  let color = document.createElement("div");
+  color.className = "task";
+  color.style.backgroundColor = string;
+  const taskList = document.querySelector(".my-tasks");
+  taskList.appendChild(color);
+}
